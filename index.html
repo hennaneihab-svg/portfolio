@@ -1,0 +1,598 @@
+<!DOCTYPE html>
+<html lang="fr" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ramy Hennane | Concepteur Logiciel & Profil Hybride Finance</title>
+    <meta name="description" content="Portfolio de Ramy Hennane. Concepteur d'applications métier, ERP légers & outils de flux. Master 2 Finance ESEO et développeur full-stack.">
+    
+    <!-- Open Graph / Social -->
+    <meta property="og:title" content="Ramy Hennane | Concepteur Logiciel & Profil Hybride Finance">
+    <meta property="og:description" content="Portfolio de Ramy Hennane. Concepteur d'applications métier, ERP légers & outils de flux. Master 2 Finance ESEO et développeur full-stack.">
+    <meta property="og:type" content="website">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;700&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
+    
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <!-- Noise Texture Overlay -->
+    <div class="noise-overlay"></div>
+
+    <!-- Custom Cursor -->
+    <div class="custom-cursor"></div>
+    <div class="custom-cursor-follower"></div>
+
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="#" class="logo magnetic">RH.</a>
+            <ul class="nav-links">
+                <li><a href="#about" class="magnetic">À propos</a></li>
+                <li><a href="#skills" class="magnetic">Compétences</a></li>
+                <li><a href="#projects" class="magnetic">Projets</a></li>
+                <li><a href="#timeline" class="magnetic">Parcours</a></li>
+                <li><a href="#contact" class="btn btn-primary magnetic">Me contacter</a></li>
+            </ul>
+            <div class="mobile-menu-btn">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <canvas id="hero-canvas"></canvas>
+        <div class="hero-content">
+            <div class="hero-avatar magnetic">
+                <svg viewBox="0 0 100 100" class="monogram">
+                    <defs>
+                        <linearGradient id="cyanGlow" x1="0%" y1="0%" x2="100%" y2="100%">
+                            <stop offset="0%" stop-color="#00D9FF" />
+                            <stop offset="100%" stop-color="#0A0E14" />
+                        </linearGradient>
+                    </defs>
+                    <path class="rh-path" d="M30,70 L30,30 L50,30 C58,30 60,35 60,40 C60,45 58,50 50,50 L30,50 M50,50 L65,70 M75,30 L75,70 M75,50 L90,50 M90,30 L90,70" fill="none" stroke="#00D9FF" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+            </div>
+            <div class="hero-text-container">
+                <h1 class="hero-title">
+                    <span class="stagger-text">Concepteur Logiciel</span>
+                    <br>
+                    <span class="stagger-text">& Profil Hybride</span>
+                    <span class="stagger-text accent-cyan">Finance</span>
+                </h1>
+                <p class="hero-subtitle stagger-text">
+                    Co-fondateur <span class="accent-secondary">Zianide Digital</span>. J'allie la rigueur quantitative de la finance de marché à la vitesse d'exécution logicielle.
+                </p>
+                <div class="hero-cta stagger-text">
+                    <a href="#projects" class="btn btn-primary magnetic">Voir mes projets</a>
+                    <a href="#contact" class="btn btn-outline magnetic">Échanger sur un projet</a>
+                </div>
+            </div>
+        </div>
+        <div class="scroll-indicator">
+            <div class="mouse"></div>
+            <span>Scroll</span>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="about section-padding" id="about">
+        <div class="container">
+            <div class="section-header reveal-up">
+                <h2 class="section-title">01. <span class="accent-cyan">À propos</span></h2>
+                <div class="line-decorator"></div>
+            </div>
+            <div class="about-grid">
+                <div class="about-text reveal-up">
+                    <p>Je suis <strong>Ramy Hennane</strong>, 22 ans. Actuellement en Master 2 Économie, Finance et Marchés à l'ESEO d'Oran, j'évolue à l'intersection de l'ingénierie logicielle et de l'analyse quantitative.</p>
+                    <p>En tant que Co-fondateur de <strong>Zianide Digital</strong> (studio web 100% remote), je conçois des applications métier et des ERP légers pour répondre aux enjeux opérationnels des PME.</p>
+                    <p>Dynamique, polyvalent et en apprentissage continu, j'applique ma compréhension des marchés financiers (Order Flow NAS100) à la création de systèmes informatiques robustes, scalables et centrés sur la donnée.</p>
+                    <div class="languages mt-4">
+                        <span class="tech-tag">Français (Courant)</span>
+                        <span class="tech-tag">Anglais (Opérationnel)</span>
+                    </div>
+                </div>
+                <div class="about-stats reveal-up">
+                    <div class="stat-card glass-card tilt-card">
+                        <div class="stat-number"><span class="counter" data-target="7">0</span> jours</div>
+                        <div class="stat-label">Déploiement record (H2 Mechanic Corp)</div>
+                        <div class="candlestick-accent red"></div>
+                    </div>
+                    <div class="stat-card glass-card tilt-card">
+                        <div class="stat-number"><span class="counter" data-target="1">0</span> an</div>
+                        <div class="stat-label">Trading Order Flow (NAS100)</div>
+                        <div class="candlestick-accent green"></div>
+                    </div>
+                    <div class="stat-card glass-card tilt-card">
+                        <div class="stat-number"><span class="counter" data-target="4">0</span></div>
+                        <div class="stat-label">Projets logiciels majeurs</div>
+                        <div class="candlestick-accent cyan"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section class="skills section-padding" id="skills">
+        <div class="container">
+            <div class="section-header reveal-up">
+                <h2 class="section-title">02. <span class="accent-cyan">Compétences</span></h2>
+                <div class="line-decorator"></div>
+            </div>
+            <div class="skills-grid">
+                <!-- Dev Skills -->
+                <div class="skills-category reveal-up">
+                    <h3>Ingénierie Logicielle</h3>
+                    <div class="skill-bars">
+                        <div class="skill-item">
+                            <div class="skill-info"><span>JavaScript / Python</span> <span class="mono">90%</span></div>
+                            <div class="progress-bg"><div class="progress-bar" data-width="90%"></div></div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-info"><span>HTML/CSS / Architecture UI</span> <span class="mono">95%</span></div>
+                            <div class="progress-bg"><div class="progress-bar" data-width="95%"></div></div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-info"><span>Architecture logicielle & Bases de données (SQL)</span> <span class="mono">85%</span></div>
+                            <div class="progress-bg"><div class="progress-bar" data-width="85%"></div></div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-info"><span>Automatisation & Intégration API</span> <span class="mono">88%</span></div>
+                            <div class="progress-bg"><div class="progress-bar" data-width="88%"></div></div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Finance Skills -->
+                <div class="skills-category reveal-up">
+                    <h3>Finance & Marchés</h3>
+                    <div class="skill-bars">
+                        <div class="skill-item">
+                            <div class="skill-info"><span>Order Flow Trading (NAS100)</span> <span class="mono">85%</span></div>
+                            <div class="progress-bg"><div class="progress-bar green-bar" data-width="85%"></div></div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-info"><span>Analyse quantitative</span> <span class="mono">80%</span></div>
+                            <div class="progress-bg"><div class="progress-bar green-bar" data-width="80%"></div></div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-info"><span>Gestion des risques</span> <span class="mono">90%</span></div>
+                            <div class="progress-bg"><div class="progress-bar green-bar" data-width="90%"></div></div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-info"><span>Microstructure des marchés & Analyse financière</span> <span class="mono">85%</span></div>
+                            <div class="progress-bg"><div class="progress-bar green-bar" data-width="85%"></div></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section class="projects section-padding" id="projects">
+        <div class="container">
+            <div class="section-header reveal-up">
+                <h2 class="section-title">03. <span class="accent-cyan">Projets</span></h2>
+                <div class="line-decorator"></div>
+            </div>
+            <div class="projects-grid">
+                
+                <!-- Project 1 -->
+                <div class="project-card glass-card tilt-card reveal-up" onclick="openModal('modal-h2')">
+                    <div class="project-content">
+                        <div class="project-header">
+                            <span class="project-overline mono">Plateforme Web & Admin</span>
+                            <h3 class="project-title">H2 Mechanic Corp</h3>
+                        </div>
+                        <p class="project-desc">Plateforme complète d'atelier mécanique avec panel admin et système de réservation automatisé.</p>
+                        <div class="project-tech">
+                            <span class="tech-tag">HTML/CSS/JS</span>
+                            <span class="tech-tag">Backend gestion</span>
+                            <span class="tech-tag">Live 7 jours</span>
+                        </div>
+                    </div>
+                    <div class="hover-border"></div>
+                </div>
+
+                <!-- Project 2 -->
+                <div class="project-card glass-card tilt-card reveal-up" onclick="openModal('modal-tissu')">
+                    <div class="project-content">
+                        <div class="project-header">
+                            <span class="project-overline mono">Logiciel Industriel</span>
+                            <h3 class="project-title">TissuPro</h3>
+                        </div>
+                        <p class="project-desc">Logiciel de traçabilité industrielle par QR codes dynamiques pour le commerce de tissu.</p>
+                        <div class="project-tech">
+                            <span class="tech-tag">Traçabilité</span>
+                            <span class="tech-tag">Génération QR</span>
+                            <span class="tech-tag">Dashboard</span>
+                        </div>
+                    </div>
+                    <div class="hover-border"></div>
+                </div>
+
+                <!-- Project 3 -->
+                <div class="project-card glass-card tilt-card reveal-up" onclick="openModal('modal-dress')">
+                    <div class="project-content">
+                        <div class="project-header">
+                            <span class="project-overline mono">Logiciel de Gestion ERP</span>
+                            <h3 class="project-title">Dress Rent</h3>
+                        </div>
+                        <p class="project-desc">Logiciel métier (Atelier Prestige) de gestion de stock, échéances et facturation (location/vente).</p>
+                        <div class="project-tech">
+                            <span class="tech-tag">ERP léger</span>
+                            <span class="tech-tag">Gestion Stock</span>
+                            <span class="tech-tag">Configurable</span>
+                        </div>
+                    </div>
+                    <div class="hover-border"></div>
+                </div>
+
+                <!-- Project 4 -->
+                <div class="project-card glass-card tilt-card reveal-up" onclick="openModal('modal-biostat')">
+                    <div class="project-content">
+                        <div class="project-status">
+                            <span class="status-dot pulsing"></span> En développement
+                        </div>
+                        <div class="project-header">
+                            <span class="project-overline mono">Application Desktop</span>
+                            <h3 class="project-title">Biostat</h3>
+                        </div>
+                        <p class="project-desc">App desktop d'analyse statistique avancée avec génération de diagrammes et figures analytiques.</p>
+                        <div class="project-tech">
+                            <span class="tech-tag">Analyse Statistique</span>
+                            <span class="tech-tag">Data Viz</span>
+                            <span class="tech-tag">Desktop</span>
+                        </div>
+                    </div>
+                    <div class="hover-border"></div>
+                </div>
+
+                <!-- Project 5 -->
+                <div class="project-card glass-card tilt-card reveal-up" onclick="openModal('modal-proto')">
+                    <div class="project-content">
+                        <div class="project-header">
+                            <span class="project-overline mono">UI/UX & Frontend</span>
+                            <h3 class="project-title">Prototypes Sectoriels</h3>
+                        </div>
+                        <p class="project-desc">VISIORA (interface de présentation visuelle) & prototypes de sites vitrines pour agence immobilière.</p>
+                        <div class="project-tech">
+                            <span class="tech-tag">Frontend Design</span>
+                            <span class="tech-tag">UI/UX</span>
+                            <span class="tech-tag">Immobilier</span>
+                        </div>
+                    </div>
+                    <div class="hover-border"></div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Timeline & Education Section -->
+    <section class="timeline-section section-padding" id="timeline">
+        <div class="container">
+            <div class="timeline-grid">
+                
+                <!-- Parcours -->
+                <div class="timeline-col">
+                    <div class="section-header reveal-up">
+                        <h2 class="section-title">04. <span class="accent-cyan">Parcours</span></h2>
+                    </div>
+                    <div class="timeline-container reveal-up">
+                        <div class="timeline-line">
+                            <div class="timeline-progress"></div>
+                        </div>
+                        
+                        <div class="timeline-item">
+                            <div class="timeline-dot cyan"></div>
+                            <div class="timeline-content">
+                                <span class="timeline-date mono">En cours</span>
+                                <h4>Master 2 Économie, Finance et Marchés</h4>
+                                <p>ESEO, Oran</p>
+                            </div>
+                        </div>
+
+                        <div class="timeline-item">
+                            <div class="timeline-dot cyan"></div>
+                            <div class="timeline-content">
+                                <span class="timeline-date mono">Depuis 1 an</span>
+                                <h4>Trading Order Flow NAS100</h4>
+                                <p>Exécution indépendante, gestion stricte du risque.</p>
+                            </div>
+                        </div>
+
+                        <div class="timeline-item">
+                            <div class="timeline-dot cyan"></div>
+                            <div class="timeline-content">
+                                <span class="timeline-date mono">Présent</span>
+                                <h4>Co-fondateur</h4>
+                                <p>Zianide Digital — Studio web freelance 100% remote.</p>
+                            </div>
+                        </div>
+
+                        <div class="timeline-item">
+                            <div class="timeline-dot"></div>
+                            <div class="timeline-content">
+                                <span class="timeline-date mono">15 jours</span>
+                                <h4>Stage Opérations Bancaires</h4>
+                                <p>Banque Extérieure d'Algérie (BEA, Oran)</p>
+                            </div>
+                        </div>
+
+                        <div class="timeline-item">
+                            <div class="timeline-dot"></div>
+                            <div class="timeline-content">
+                                <span class="timeline-date mono">3 x 7 jours</span>
+                                <h4>Stage Assurance Salama</h4>
+                                <p>Direction Régionale Ouest, Tlemcen</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Education (Focus) -->
+                <div class="education-col reveal-up">
+                    <div class="glass-card grad-card">
+                        <div class="grad-icon">
+                            <svg viewBox="0 0 24 24" width="40" height="40" stroke="#00D9FF" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg>
+                        </div>
+                        <h3>Formation d'Excellence</h3>
+                        <p class="school-name">École Supérieure d'Économie d'Oran (ESEO)</p>
+                        <p class="degree">Master 2 Économie, Finance et Marchés</p>
+                        <div class="gpa-box">
+                            <span class="gpa-label">Moyenne Générale (sur 4 ans)</span>
+                            <span class="gpa-score mono accent-cyan">16,59 / 20</span>
+                        </div>
+                        <div class="candlestick-bg"></div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact section-padding" id="contact">
+        <div class="container">
+            <div class="section-header reveal-up text-center mx-auto">
+                <h2 class="section-title">05. <span class="accent-cyan">Contact</span></h2>
+                <div class="line-decorator center"></div>
+                <p class="contact-subtitle">Besoin d'une solution logicielle métier ou d'un profil hybride tech/finance pour votre entreprise ? Discutons-en.</p>
+            </div>
+            
+            <div class="contact-content reveal-up">
+                <div class="contact-actions">
+                    <a href="mailto:hennaneihab@gmail.com" class="btn btn-primary magnetic btn-large">
+                        <svg viewBox="0 0 24 24" width="20" height="20" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+                        hennaneihab@gmail.com
+                    </a>
+                </div>
+                
+                <div class="social-links">
+                    <a href="https://linkedin.com/in/ramyhennane" target="_blank" rel="noopener noreferrer" class="social-link magnetic">
+                        <svg viewBox="0 0 24 24" width="24" height="24" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg>
+                    </a>
+                    <a href="https://github.com/hennaneihab-svg" target="_blank" rel="noopener noreferrer" class="social-link magnetic">
+                        <svg viewBox="0 0 24 24" width="24" height="24" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
+                    </a>
+                </div>
+            </div>
+        </div>
+        
+        <footer>
+            <p class="mono">Conçu & Développé par Ramy Hennane &copy; 2026</p>
+        </footer>
+    </section>
+
+    <!-- Project Modals -->
+    <!-- H2 Mechanic Modal -->
+    <div class="modal" id="modal-h2">
+        <div class="modal-backdrop" onclick="closeModal('modal-h2')"></div>
+        <div class="modal-content glass-card">
+            <button class="modal-close" onclick="closeModal('modal-h2')">
+                <svg viewBox="0 0 24 24" width="24" height="24" stroke="currentColor" stroke-width="2" fill="none"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+            </button>
+            <div class="modal-body">
+                <h3 class="modal-title">H2 Mechanic Corp</h3>
+                <div class="modal-links">
+                    <a href="https://h2mechaniccorp.com" target="_blank" rel="noopener noreferrer" class="btn btn-outline btn-small mono">
+                        <span>Lien Live</span>
+                        <svg viewBox="0 0 24 24" width="14" height="14" stroke="currentColor" stroke-width="2" fill="none"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+                    </a>
+                </div>
+                
+                <div class="modal-section">
+                    <h4 class="accent-red">Problème</h4>
+                    <p>Atelier mécanique fonctionnant sans système de réservation en ligne, entraînant une gestion manuelle lourde et un risque d'erreurs de planification.</p>
+                </div>
+                
+                <div class="modal-section">
+                    <h4 class="accent-cyan">Solution</h4>
+                    <p>Développement d'une plateforme web complète intégrant un panel d'administration sur-mesure et un tunnel de réservation entièrement automatisé, évitant les conflits de créneaux.</p>
+                </div>
+
+                <div class="modal-section">
+                    <h4 class="mono text-gray">Stack Technique</h4>
+                    <div class="project-tech mt-2">
+                        <span class="tech-tag">HTML/CSS</span>
+                        <span class="tech-tag">JavaScript Vanilla</span>
+                        <span class="tech-tag">Backend Gestion</span>
+                        <span class="tech-tag">Architecture MVC</span>
+                    </div>
+                </div>
+
+                <div class="modal-section">
+                    <h4 class="accent-green">Résultat</h4>
+                    <p>Application conceptualisée, développée et déployée en production (live) seul, en un temps record de <strong>7 jours calendaires</strong>.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- TissuPro Modal -->
+    <div class="modal" id="modal-tissu">
+        <div class="modal-backdrop" onclick="closeModal('modal-tissu')"></div>
+        <div class="modal-content glass-card">
+            <button class="modal-close" onclick="closeModal('modal-tissu')">
+                <svg viewBox="0 0 24 24" width="24" height="24" stroke="currentColor" stroke-width="2" fill="none"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+            </button>
+            <div class="modal-body">
+                <h3 class="modal-title">TissuPro</h3>
+                
+                <div class="modal-section">
+                    <h4 class="accent-red">Problème</h4>
+                    <p>Absence de suivi précis et traçabilité manuelle fastidieuse dans un commerce B2B de tissu (pertes d'inventaire, identification complexe des lots).</p>
+                </div>
+                
+                <div class="modal-section">
+                    <h4 class="accent-cyan">Solution</h4>
+                    <p>Conception d'un logiciel de traçabilité industrielle. Le système permet la génération, l'impression et le scan de QR codes dynamiques pour suivre chaque rouleau/lot en temps réel.</p>
+                </div>
+
+                <div class="modal-section">
+                    <h4 class="mono text-gray">Stack Technique</h4>
+                    <div class="project-tech mt-2">
+                        <span class="tech-tag">Full-Stack</span>
+                        <span class="tech-tag">API QR Code</span>
+                        <span class="tech-tag">Base de données relationnelle</span>
+                    </div>
+                </div>
+
+                <div class="modal-section">
+                    <h4 class="accent-green">Résultat</h4>
+                    <p>Fiabilisation totale de l'inventaire et accélération des processus de réception et d'expédition des marchandises.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Dress Rent Modal -->
+    <div class="modal" id="modal-dress">
+        <div class="modal-backdrop" onclick="closeModal('modal-dress')"></div>
+        <div class="modal-content glass-card">
+            <button class="modal-close" onclick="closeModal('modal-dress')">
+                <svg viewBox="0 0 24 24" width="24" height="24" stroke="currentColor" stroke-width="2" fill="none"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+            </button>
+            <div class="modal-body">
+                <h3 class="modal-title">Dress Rent (Atelier Prestige)</h3>
+                
+                <div class="modal-section">
+                    <h4 class="accent-red">Problème</h4>
+                    <p>Gestion manuelle sur papier ou tableur des rotations de location/vente de costumes et robes, causant des conflits de dates, des oublis de cautions et un suivi financier flou.</p>
+                </div>
+                
+                <div class="modal-section">
+                    <h4 class="accent-cyan">Solution</h4>
+                    <p>Création d'un ERP léger spécifique aux boutiques de location. Il gère l'état du stock, les échéances de retour, les cautions et génère la facturation. L'outil est configurable (mode homme ou femme).</p>
+                </div>
+
+                <div class="modal-section">
+                    <h4 class="mono text-gray">Stack Technique</h4>
+                    <div class="project-tech mt-2">
+                        <span class="tech-tag">Système ERP</span>
+                        <span class="tech-tag">Architecture modulaire</span>
+                        <span class="tech-tag">Gestion des flux financiers</span>
+                    </div>
+                </div>
+
+                <div class="modal-section">
+                    <h4 class="accent-green">Résultat</h4>
+                    <p>Centralisation de la data commerciale, suppression des double-réservations et visibilité financière claire en temps réel.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Biostat Modal -->
+    <div class="modal" id="modal-biostat">
+        <div class="modal-backdrop" onclick="closeModal('modal-biostat')"></div>
+        <div class="modal-content glass-card">
+            <button class="modal-close" onclick="closeModal('modal-biostat')">
+                <svg viewBox="0 0 24 24" width="24" height="24" stroke="currentColor" stroke-width="2" fill="none"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+            </button>
+            <div class="modal-body">
+                <div class="project-status mb-2">
+                    <span class="status-dot pulsing"></span> En développement
+                </div>
+                <h3 class="modal-title">Biostat</h3>
+                
+                <div class="modal-section">
+                    <h4 class="accent-red">Problème</h4>
+                    <p>Besoin d'un outil local, performant et spécialisé pour le traitement statistique complexe de jeux de données, sans dépendre de solutions Cloud coûteuses.</p>
+                </div>
+                
+                <div class="modal-section">
+                    <h4 class="accent-cyan">Solution</h4>
+                    <p>Développement d'une application Desktop dédiée à l'analyse statistique avancée. Le logiciel ingère des datasets et produit des analyses quantitatives accompagnées de sorties visuelles (diagrammes, figures analytiques).</p>
+                </div>
+
+                <div class="modal-section">
+                    <h4 class="mono text-gray">Stack Technique</h4>
+                    <div class="project-tech mt-2">
+                        <span class="tech-tag">Application Desktop</span>
+                        <span class="tech-tag">Algorithmique quantitative</span>
+                        <span class="tech-tag">Data Visualization</span>
+                    </div>
+                </div>
+
+                <div class="modal-section">
+                    <h4 class="accent-green">Résultat attendu</h4>
+                    <p>Un outil d'analyse rigoureux combinant puissance de calcul locale et restitution graphique de haute qualité (exportable).</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Prototypes Modal -->
+    <div class="modal" id="modal-proto">
+        <div class="modal-backdrop" onclick="closeModal('modal-proto')"></div>
+        <div class="modal-content glass-card">
+            <button class="modal-close" onclick="closeModal('modal-proto')">
+                <svg viewBox="0 0 24 24" width="24" height="24" stroke="currentColor" stroke-width="2" fill="none"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+            </button>
+            <div class="modal-body">
+                <h3 class="modal-title">Prototypes Sectoriels</h3>
+                
+                <div class="modal-section">
+                    <h4 class="accent-red">Problème</h4>
+                    <p>Nécessité de démontrer la faisabilité technique et la proposition de valeur visuelle avant le développement complet d'un produit (Proof of Concept).</p>
+                </div>
+                
+                <div class="modal-section">
+                    <h4 class="accent-cyan">Solution</h4>
+                    <p>Ingénierie frontend de prototypes interactifs haute-fidélité. 
+                    <br><br>• <strong>VISIORA :</strong> Interface de présentation visuelle de concepts.
+                    <br>• <strong>Immobilier :</strong> Prototype de site vitrine dynamique pour agence, intégrant des parcours utilisateurs spécifiques au secteur.</p>
+                </div>
+
+                <div class="modal-section">
+                    <h4 class="mono text-gray">Stack Technique</h4>
+                    <div class="project-tech mt-2">
+                        <span class="tech-tag">Frontend Design</span>
+                        <span class="tech-tag">Animations CSS/JS</span>
+                        <span class="tech-tag">Intégration UI/UX</span>
+                    </div>
+                </div>
+
+                <div class="modal-section">
+                    <h4 class="accent-green">Résultat</h4>
+                    <p>Des démonstrateurs cliquables, responsives et performants, servant de base contractuelle solide pour le développement complet d'applications web.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Scripts (GSAP & Custom) -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <script src="js/app.js"></script>
+</body>
+</html>
