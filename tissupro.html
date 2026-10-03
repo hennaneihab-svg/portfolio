@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="fr" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TissuPro - Étude de Cas | Ramy Hennane</title>
+    <meta name="description" content="Étude de cas complète du logiciel TissuPro : ERP Desktop et système de caisse sur mesure développé en Rust et Tauri 2.0.">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;700&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
+    
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        /* Specific Case Study Styles */
+        .case-hero {
+            padding-top: 150px;
+            padding-bottom: 50px;
+            min-height: auto;
+            align-items: flex-start;
+        }
+        
+        .case-meta {
+            display: flex;
+            gap: 2rem;
+            margin-bottom: 3rem;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+            padding: 1.5rem 0;
+            flex-wrap: wrap;
+        }
+        
+        .meta-item {
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+        }
+        
+        .meta-label {
+            font-family: var(--font-mono);
+            font-size: 0.75rem;
+            color: var(--text-secondary);
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+        }
+        
+        .meta-value {
+            font-size: 1rem;
+            font-weight: 600;
+            color: var(--text-primary);
+        }
+
+        .feature-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+        
+        .case-image {
+            width: 100%;
+            height: auto;
+            border-radius: 12px;
+            border: 1px solid rgba(0, 217, 255, 0.2);
+            margin: 3rem 0;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.5);
+            transition: transform 0.4s ease;
+        }
+        .case-image:hover {
+            transform: scale(1.02);
+            border-color: var(--accent-cyan);
+        }
+
+        .cta-section {
+            background: linear-gradient(180deg, rgba(18,22,31,0) 0%, rgba(18,22,31,0.8) 100%);
+            border-radius: 20px;
+            padding: 5rem 2rem;
+            text-align: center;
+            border: 1px solid rgba(0, 217, 255, 0.1);
+            position: relative;
+            overflow: hidden;
+        }
+        .cta-section::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background: radial-gradient(circle at center, rgba(0,217,255,0.05) 0%, transparent 70%);
+            pointer-events: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="noise-overlay"></div>
+    <div class="custom-cursor"></div>
+    <div class="custom-cursor-follower"></div>
+
+    <!-- Navigation -->
+    <nav class="navbar scrolled">
+        <div class="nav-container">
+            <a href="index.html" class="logo magnetic">RH.</a>
+            <ul class="nav-links">
+                <li><a href="index.html#projects" class="magnetic flex items-center gap-2">
+                    <svg viewBox="0 0 24 24" width="16" height="16" stroke="currentColor" stroke-width="2" fill="none"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
+                    Retour au portfolio
+                </a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <main class="container">
+        <!-- Hero Case Study -->
+        <section class="case-hero reveal-up">
+            <div class="mask-wrap"><span class="project-overline mono stagger-text">Étude de Cas Logiciel</span></div>
+            <h1 class="hero-title mt-2">
+                <span class="mask-wrap"><span class="stagger-text">TissuPro</span></span>
+            </h1>
+            <p class="hero-subtitle stagger-text">ERP Desktop et système de caisse sur mesure pour le commerce textile en Algérie. Développé par Zianide Digital.</p>
+            
+            <div class="case-meta stagger-text">
+                <div class="meta-item">
+                    <span class="meta-label">Client / Studio</span>
+                    <span class="meta-value accent-cyan">Zianide Digital</span>
+                </div>
+                <div class="meta-item">
+                    <span class="meta-label">Technologies</span>
+                    <div class="project-tech">
+                        <span class="tech-tag">Rust</span>
+                        <span class="tech-tag">Tauri 2.0</span>
+                        <span class="tech-tag">React</span>
+                    </div>
+                </div>
+                <div class="meta-item">
+                    <span class="meta-label">Rôle</span>
+                    <span class="meta-value">Développement Full-Stack & Architecture</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- Image Showcase -->
+        <section class="reveal-up">
+            <img src="https://hennaneihab-svg.github.io/zianide-digital/portfolio/tissupro/tissupro-showcase.jpg" alt="Interface TissuPro" class="case-image" onerror="this.style.display='none'">
+        </section>
+
+        <!-- Problème & Solution -->
+        <section class="section-padding reveal-up">
+            <div class="skills-grid">
+                <div class="glass-card">
+                    <h3 class="accent-red mb-2">Le Défi</h3>
+                    <p>Le commerce de textile B2B souffrait d'une <strong>absence de suivi précis</strong> et d'une traçabilité manuelle fastidieuse. L'inventaire était sujet à des pertes, l'identification des lots complexes était inefficace, et les temps d'encaissement en caisse généraient des files d'attente et des erreurs de calcul.</p>
+                </div>
+                <div class="glass-card">
+                    <h3 class="accent-cyan mb-2">La Solution</h3>
+                    <p>Développement d'un <strong>ERP Desktop sur-mesure ultra-rapide</strong> basé sur <strong>Rust et Tauri 2.0</strong>. Intégration d'un système de traçabilité industrielle complet avec génération, impression et scan de QR codes dynamiques, couplé à une interface de caisse fluide.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Fonctionnalités clés -->
+        <section class="section-padding reveal-up">
+            <h2 class="section-title text-center">Fonctionnalités <span class="accent-cyan">Clés</span></h2>
+            <div class="line-decorator center mb-2"></div>
+            
+            <div class="feature-grid">
+                <div class="glass-card tilt-card">
+                    <svg viewBox="0 0 24 24" width="32" height="32" stroke="var(--accent-cyan)" stroke-width="2" fill="none" class="mb-2"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+                    <h4>Calcul Précis des Bénéfices</h4>
+                    <p class="text-gray mt-2">Calcul automatique des bénéfices nets réels par type de tissu, prenant en compte de manière dynamique les chutes de découpe et les frais de transport liés à chaque lot.</p>
+                </div>
+                
+                <div class="glass-card tilt-card">
+                    <svg viewBox="0 0 24 24" width="32" height="32" stroke="var(--accent-green)" stroke-width="2" fill="none" class="mb-2"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"/><line x1="3" y1="9" x2="21" y2="9"/><line x1="9" y1="21" x2="9" y2="9"/></svg>
+                    <h4>Fluidité en Caisse</h4>
+                    <p class="text-gray mt-2">Réduction drastique des temps d'encaissement et élimination totale des erreurs de calcul de monnaie grâce à une interface ergonomique et réactive conçue pour le terrain.</p>
+                </div>
+                
+                <div class="glass-card tilt-card">
+                    <svg viewBox="0 0 24 24" width="32" height="32" stroke="var(--accent-cyan)" stroke-width="2" fill="none" class="mb-2"><path d="M3 7V5a2 2 0 0 1 2-2h2M17 3h2a2 2 0 0 1 2 2v2M21 17v2a2 2 0 0 1-2 2h-2M7 21H5a2 2 0 0 1-2-2v-2"/><rect x="7" y="7" width="10" height="10"/></svg>
+                    <h4>Traçabilité Industrielle</h4>
+                    <p class="text-gray mt-2">Génération de QR codes uniques par rouleau. Le scan instantané permet de récupérer l'historique, le fournisseur, et le métrage exact restant en stock en temps réel.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA Zianide Digital -->
+        <section class="section-padding reveal-up">
+            <div class="cta-section">
+                <h2 class="section-title mb-2">Un projet de logiciel sur-mesure ?</h2>
+                <p class="hero-subtitle mx-auto text-gray" style="max-width: 700px;">Chez <strong>Zianide Digital</strong>, nous concevons des applications adaptées aux règles métiers uniques de votre entreprise. Discutons ensemble de vos besoins opérationnels.</p>
+                
+                <div class="hero-cta mt-4" style="justify-content: center; opacity: 1;">
+                    <a href="https://hennaneihab-svg.github.io/zianide-digital/" target="_blank" rel="noopener noreferrer" class="btn btn-primary magnetic btn-large">
+                        Découvrir Zianide Digital
+                        <svg viewBox="0 0 24 24" width="16" height="16" stroke="currentColor" stroke-width="2" fill="none"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                    </a>
+                    <a href="https://wa.me/213554182982?text=Bonjour,%20j'ai%20découvert%20l'étude%20de%20cas%20TissuPro%20dans%20votre%20portfolio%20et%20je%20souhaite%20discuter%20d'un%20logiciel%20sur%20mesure." target="_blank" rel="noopener noreferrer" class="btn btn-outline magnetic btn-large">
+                        Échanger sur WhatsApp
+                        <svg viewBox="0 0 24 24" width="16" height="16" stroke="currentColor" stroke-width="2" fill="none"><path d="M7 7h10v10M7 17L17 7"/></svg>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer style="text-align: center; padding: 4rem 0; color: var(--text-secondary); font-family: var(--font-mono); font-size: 0.8rem;">
+        <p>Étude de Cas intégrée au Portfolio de Ramy Hennane &copy; 2026</p>
+    </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <script src="js/app.js"></script>
+</body>
+</html>
