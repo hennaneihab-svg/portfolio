@@ -41,10 +41,10 @@ document.addEventListener("DOMContentLoaded", () => {
             const y = e.clientY - rect.top - rect.height / 2;
             
             gsap.to(btn, {
-                x: x * 0.3,
-                y: y * 0.3,
-                duration: 0.4,
-                ease: "power2.out"
+                x: x * 0.2, // Reduced strength for more premium feel
+                y: y * 0.2,
+                duration: 0.6,
+                ease: "power3.out" // Smoother ease instead of bouncy
             });
         });
         
@@ -52,8 +52,8 @@ document.addEventListener("DOMContentLoaded", () => {
             gsap.to(btn, {
                 x: 0,
                 y: 0,
-                duration: 0.7,
-                ease: "elastic.out(1, 0.3)"
+                duration: 0.8,
+                ease: "power3.out" // No elastic bounce, just smooth return
             });
         });
     });
@@ -64,7 +64,7 @@ document.addEventListener("DOMContentLoaded", () => {
     
     let width, height;
     let dots = [];
-    const spacing = 40;
+    const spacing = 45;
     let canvasMouseX = -1000;
     let canvasMouseY = -1000;
 
@@ -95,7 +95,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     function drawGrid() {
         ctx.clearRect(0, 0, width, height);
-        ctx.fillStyle = 'rgba(255, 255, 255, 0.15)';
+        ctx.fillStyle = 'rgba(255, 255, 255, 0.1)';
         
         for (let i = 0; i < dots.length; i++) {
             let dot = dots[i];
@@ -107,25 +107,25 @@ document.addEventListener("DOMContentLoaded", () => {
             
             let targetX = dot.baseX;
             let targetY = dot.baseY;
-            let size = 1.5;
-            let opacity = 0.15;
+            let size = 1.2;
+            let opacity = 0.08;
 
             // Magnetic effect pushing dots away slightly
-            if (dist < 150) {
-                let force = (150 - dist) / 150;
-                targetX = dot.baseX - (dx * force * 0.1);
-                targetY = dot.baseY - (dy * force * 0.1);
+            if (dist < 180) {
+                let force = (180 - dist) / 180;
+                targetX = dot.baseX - (dx * force * 0.06);
+                targetY = dot.baseY - (dy * force * 0.06);
                 
                 // Highlight color near mouse
-                ctx.fillStyle = `rgba(0, 217, 255, ${opacity + force * 0.4})`;
-                size = 1.5 + (force * 1.5);
+                ctx.fillStyle = `rgba(0, 217, 255, ${opacity + force * 0.3})`;
+                size = 1.2 + (force * 1.2);
             } else {
                 ctx.fillStyle = `rgba(255, 255, 255, ${opacity})`;
             }
 
-            // Lerp position
-            dot.x += (targetX - dot.x) * 0.1;
-            dot.y += (targetY - dot.y) * 0.1;
+            // Lerp position (slower lerp for smoother organic feel)
+            dot.x += (targetX - dot.x) * 0.05;
+            dot.y += (targetY - dot.y) * 0.05;
 
             ctx.beginPath();
             ctx.arc(dot.x, dot.y, size, 0, Math.PI * 2);
@@ -142,14 +142,14 @@ document.addEventListener("DOMContentLoaded", () => {
     // Hero Loader Animation
     const tlHero = gsap.timeline();
     
-    tlHero.to(".hero-avatar", { opacity: 1, duration: 1, ease: "power3.out" }, 0.2)
+    tlHero.to(".hero-avatar", { opacity: 1, duration: 1.5, ease: "power3.out" }, 0.2)
           .fromTo(".rh-path", 
               { strokeDasharray: 400, strokeDashoffset: 400 },
-              { strokeDashoffset: 0, duration: 2, ease: "power2.inOut" }, 0.2)
-          .to(".hero-title .stagger-text", { opacity: 1, y: 0, duration: 0.8, stagger: 0.1, ease: "back.out(1.7)" }, 0.6)
-          .to(".hero-subtitle.stagger-text", { opacity: 1, y: 0, duration: 0.8, ease: "power3.out" }, 1)
-          .to(".hero-cta", { opacity: 1, y: 0, duration: 0.8, ease: "power3.out" }, 1.2)
-          .to(".scroll-indicator", { opacity: 1, duration: 1 }, 1.5);
+              { strokeDashoffset: 0, duration: 2.5, ease: "expo.inOut" }, 0.2)
+          .to(".hero-title .stagger-text", { opacity: 1, y: 0, duration: 1.2, stagger: 0.15, ease: "expo.out" }, 0.7)
+          .to(".hero-subtitle.stagger-text", { opacity: 1, y: 0, duration: 1.2, ease: "expo.out" }, 1.1)
+          .to(".hero-cta", { opacity: 1, y: 0, duration: 1.2, ease: "expo.out" }, 1.3)
+          .to(".scroll-indicator", { opacity: 1, duration: 1.5 }, 1.8);
 
     // Scroll Reveals
     const revealElements = document.querySelectorAll('.reveal-up');
@@ -162,8 +162,8 @@ document.addEventListener("DOMContentLoaded", () => {
             },
             opacity: 1,
             y: 0,
-            duration: 0.8,
-            ease: "power3.out"
+            duration: 1.2,
+            ease: "expo.out"
         });
     });
 
