@@ -60,96 +60,107 @@ document.addEventListener("DOMContentLoaded", () => {
 
     // --- 3. Hero Canvas Grid (Interactive) ---
     const canvas = document.getElementById('hero-canvas');
-    const ctx = canvas.getContext('2d');
-    
-    let width, height;
-    let dots = [];
-    const spacing = 45;
-    let canvasMouseX = -1000;
-    let canvasMouseY = -1000;
-
-    function initCanvas() {
-        width = canvas.width = window.innerWidth;
-        height = canvas.height = window.innerHeight;
-        dots = [];
+    if (canvas) {
+        const ctx = canvas.getContext('2d');
         
-        for (let x = 0; x < width; x += spacing) {
-            for (let y = 0; y < height; y += spacing) {
-                dots.push({
-                    x: x,
-                    y: y,
-                    baseX: x,
-                    baseY: y
-                });
+        let width, height;
+        let dots = [];
+        const spacing = 45;
+        let canvasMouseX = -1000;
+        let canvasMouseY = -1000;
+
+        function initCanvas() {
+            width = canvas.width = window.innerWidth;
+            height = canvas.height = window.innerHeight;
+            dots = [];
+            
+            for (let x = 0; x < width; x += spacing) {
+                for (let y = 0; y < height; y += spacing) {
+                    dots.push({
+                        x: x,
+                        y: y,
+                        baseX: x,
+                        baseY: y
+                    });
+                }
             }
         }
-    }
 
-    window.addEventListener('resize', initCanvas);
-    initCanvas();
+        window.addEventListener('resize', initCanvas);
+        initCanvas();
 
-    window.addEventListener('mousemove', (e) => {
-        canvasMouseX = e.clientX;
-        canvasMouseY = e.clientY;
-    });
+        window.addEventListener('mousemove', (e) => {
+            canvasMouseX = e.clientX;
+            canvasMouseY = e.clientY;
+        });
 
-    function drawGrid() {
-        ctx.clearRect(0, 0, width, height);
-        ctx.fillStyle = 'rgba(255, 255, 255, 0.1)';
-        
-        for (let i = 0; i < dots.length; i++) {
-            let dot = dots[i];
+        function drawGrid() {
+            ctx.clearRect(0, 0, width, height);
+            ctx.fillStyle = 'rgba(255, 255, 255, 0.1)';
             
-            // Calculate distance from mouse
-            let dx = canvasMouseX - dot.baseX;
-            let dy = canvasMouseY - dot.baseY;
-            let dist = Math.sqrt(dx * dx + dy * dy);
-            
-            let targetX = dot.baseX;
-            let targetY = dot.baseY;
-            let size = 1.2;
-            let opacity = 0.08;
-
-            // Magnetic effect pushing dots away slightly
-            if (dist < 180) {
-                let force = (180 - dist) / 180;
-                targetX = dot.baseX - (dx * force * 0.06);
-                targetY = dot.baseY - (dy * force * 0.06);
+            for (let i = 0; i < dots.length; i++) {
+                let dot = dots[i];
                 
-                // Highlight color near mouse
-                ctx.fillStyle = `rgba(0, 217, 255, ${opacity + force * 0.3})`;
-                size = 1.2 + (force * 1.2);
-            } else {
-                ctx.fillStyle = `rgba(255, 255, 255, ${opacity})`;
+                // Calculate distance from mouse
+                let dx = canvasMouseX - dot.baseX;
+                let dy = canvasMouseY - dot.baseY;
+                let dist = Math.sqrt(dx * dx + dy * dy);
+                
+                let targetX = dot.baseX;
+                let targetY = dot.baseY;
+                let size = 1.2;
+                let opacity = 0.08;
+
+                // Magnetic effect pushing dots away slightly
+                if (dist < 180) {
+                    let force = (180 - dist) / 180;
+                    targetX = dot.baseX - (dx * force * 0.06);
+                    targetY = dot.baseY - (dy * force * 0.06);
+                    
+                    // Highlight color near mouse
+                    ctx.fillStyle = `rgba(0, 217, 255, ${opacity + force * 0.3})`;
+                    size = 1.2 + (force * 1.2);
+                } else {
+                    ctx.fillStyle = `rgba(255, 255, 255, ${opacity})`;
+                }
+
+                // Lerp position (slower lerp for smoother organic feel)
+                dot.x += (targetX - dot.x) * 0.05;
+                dot.y += (targetY - dot.y) * 0.05;
+
+                ctx.beginPath();
+                ctx.arc(dot.x, dot.y, size, 0, Math.PI * 2);
+                ctx.fill();
             }
-
-            // Lerp position (slower lerp for smoother organic feel)
-            dot.x += (targetX - dot.x) * 0.05;
-            dot.y += (targetY - dot.y) * 0.05;
-
-            ctx.beginPath();
-            ctx.arc(dot.x, dot.y, size, 0, Math.PI * 2);
-            ctx.fill();
+            
+            requestAnimationFrame(drawGrid);
         }
-        
-        requestAnimationFrame(drawGrid);
+        drawGrid();
     }
-    drawGrid();
 
     // --- 4. GSAP Animations ---
     gsap.registerPlugin(ScrollTrigger);
 
-    // Hero Loader Animation
-    const tlHero = gsap.timeline();
-    
-    tlHero.to(".hero-avatar", { opacity: 1, duration: 1.5, ease: "power3.out" }, 0.2)
-          .fromTo(".rh-path", 
-              { strokeDasharray: 400, strokeDashoffset: 400 },
-              { strokeDashoffset: 0, duration: 2.5, ease: "expo.inOut" }, 0.2)
-          .to(".hero-title .stagger-text", { opacity: 1, y: 0, duration: 1.2, stagger: 0.15, ease: "expo.out" }, 0.7)
-          .to(".hero-subtitle.stagger-text", { opacity: 1, y: 0, duration: 1.2, ease: "expo.out" }, 1.1)
-          .to(".hero-cta", { opacity: 1, y: 0, duration: 1.2, ease: "expo.out" }, 1.3)
-          .to(".scroll-indicator", { opacity: 1, duration: 1.5 }, 1.8);
+    // Hero Loader Animation (Only if hero exists)
+    if (document.querySelector('.hero-title')) {
+        const tlHero = gsap.timeline();
+        
+        if (document.querySelector('.hero-avatar')) {
+            tlHero.to(".hero-avatar", { opacity: 1, duration: 1.5, ease: "power3.out" }, 0.2)
+                  .fromTo(".rh-path", 
+                      { strokeDasharray: 400, strokeDashoffset: 400 },
+                      { strokeDashoffset: 0, duration: 2.5, ease: "expo.inOut" }, 0.2);
+        }
+        
+        tlHero.to(".stagger-text", { opacity: 1, y: 0, duration: 1.2, stagger: 0.15, ease: "expo.out" }, 0.7);
+        
+        if (document.querySelector('.hero-cta')) {
+            tlHero.to(".hero-cta", { opacity: 1, y: 0, duration: 1.2, ease: "expo.out" }, 1.3);
+        }
+        if (document.querySelector('.scroll-indicator')) {
+            tlHero.to(".scroll-indicator", { opacity: 1, duration: 1.5 }, 1.8);
+        }
+    }
 
     // Scroll Reveals
     const revealElements = document.querySelectorAll('.reveal-up');
