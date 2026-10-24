@@ -1,37 +1,6 @@
 document.addEventListener("DOMContentLoaded", () => {
     
-    // --- 1. Custom Cursor ---
-    const cursor = document.querySelector('.custom-cursor');
-    const follower = document.querySelector('.custom-cursor-follower');
-    const interactables = document.querySelectorAll('a, button, .magnetic, .project-card, .modal-close');
-
-    let mouseX = 0, mouseY = 0;
-    let followerX = 0, followerY = 0;
-
-    // Check if device supports hover (not touch)
-    if (window.matchMedia("(hover: hover)").matches) {
-        document.addEventListener('mousemove', (e) => {
-            mouseX = e.clientX;
-            mouseY = e.clientY;
-            
-            // Cursor strictly follows mouse
-            gsap.to(cursor, { x: mouseX, y: mouseY, duration: 0, ease: "none" });
-        });
-
-        // Smooth follow for the follower circle
-        gsap.ticker.add(() => {
-            followerX += (mouseX - followerX) * 0.15;
-            followerY += (mouseY - followerY) * 0.15;
-            gsap.set(follower, { x: followerX, y: followerY });
-        });
-
-        interactables.forEach(el => {
-            el.addEventListener('mouseenter', () => document.body.classList.add('cursor-hover'));
-            el.addEventListener('mouseleave', () => document.body.classList.remove('cursor-hover'));
-        });
-    }
-
-    // --- 2. Magnetic Buttons ---
+    // --- 1. Magnetic Buttons (discreet interactive touch) ---
     const magnetics = document.querySelectorAll('.magnetic');
     
     magnetics.forEach(btn => {
@@ -175,42 +144,6 @@ document.addEventListener("DOMContentLoaded", () => {
             y: 0,
             duration: 1.2,
             ease: "expo.out"
-        });
-    });
-
-    // Animated Counters
-    const counters = document.querySelectorAll('.counter');
-    counters.forEach(counter => {
-        const target = +counter.getAttribute('data-target');
-        
-        ScrollTrigger.create({
-            trigger: counter,
-            start: "top 90%",
-            onEnter: () => {
-                gsap.to(counter, {
-                    innerHTML: target,
-                    duration: 2,
-                    snap: { innerHTML: 1 },
-                    ease: "power2.out"
-                });
-            },
-            once: true
-        });
-    });
-
-    // Skill Bars Animation
-    const skillBars = document.querySelectorAll('.progress-bar');
-    skillBars.forEach(bar => {
-        const targetWidth = bar.getAttribute('data-width');
-        
-        gsap.to(bar, {
-            scrollTrigger: {
-                trigger: bar.parentElement,
-                start: "top 85%",
-            },
-            width: targetWidth,
-            duration: 1.5,
-            ease: "power3.out"
         });
     });
 
