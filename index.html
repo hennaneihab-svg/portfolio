@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ramy Hennane | Trading Quantitatif, Conception ERP & Finance de Marché</title>
-    <meta name="description" content="Portfolio de Ramy Hennane : Étudiant en Master 2 Économie, Finance et Marchés à l'ESEO Oran, concepteur de logiciels de gestion (Rust, Tauri, React) et trader order flow.">
+    <meta name="description" content="Portfolio de Ramy Hennane : Étudiant en Master 2 Économie, Finance et Marchés à l'ESEO Oran, concepteur de logiciels de gestion (Rust, Tauri, React) et analyse financière.">
 
     <!-- Open Graph -->
     <meta property="og:title" content="Ramy Hennane | Trading Quantitatif, Conception ERP & Finance de Marché">
@@ -16,12 +16,12 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 
-    <!-- Stylesheet -->
-    <link rel="stylesheet" href="css/style.css">
+    <!-- Stylesheet with Cache-Buster -->
+    <link rel="stylesheet" href="css/style.css?v=2.1">
 </head>
 <body>
 
-    <!-- Header / Navigation -->
+    <!-- Header / Navigation (Sticky dans le flux) -->
     <header class="navbar">
         <div class="container nav-inner">
             <a href="index.html" class="brand-link" aria-label="Accueil">
@@ -54,10 +54,10 @@
         <!-- Hero Section -->
         <section class="hero-section">
             <div class="container hero-content">
-                <span class="hero-overline">Ingénierie Logicielle & Finance de Marché</span>
+                <span class="hero-overline">Finance d'Entreprise, Marchés & Ingénierie Logicielle</span>
                 <h1 class="hero-title">Trading Quantitatif, Conception ERP & Finance de Marché</h1>
                 <p class="hero-subtitle">
-                    Ramy Hennane, 22 ans. Étudiant en Master 2 Économie, Finance et Marchés à l'ESEO Oran. Concepteur de logiciels métier (Rust, Tauri, React) et trader de microstructure sur le NAS100.
+                    Ramy Hennane, 22 ans. Étudiant en Master 2 Économie, Finance et Marchés à l'ESEO Oran. Concepteur d'applications logicielles d'entreprise (Rust, Tauri, React) et outils d'aide à la décision.
                 </p>
 
                 <div class="hero-actions">
@@ -75,8 +75,8 @@
                         <span class="spec-val">Rust, Tauri 2.0, React & SQLite</span>
                     </div>
                     <div class="spec-item">
-                        <span class="spec-label">Marchés Financiers</span>
-                        <span class="spec-val">Microstructure & Order Flow NAS100</span>
+                        <span class="spec-label">Domaines Clés</span>
+                        <span class="spec-val">Finance d'entreprise, analyse financière & marchés</span>
                     </div>
                 </div>
             </div>
@@ -117,23 +117,6 @@
                     <!-- Pôle 02 -->
                     <div class="skill-card reveal-on-scroll">
                         <span class="skill-index">Pôle 02</span>
-                        <h3 class="skill-title">Finance de Marché & Quantitative</h3>
-                        <p class="skill-desc">
-                            Étude de la liquidité institutionnelle, des profils de volume et de la microstructure des instruments dérivés.
-                        </p>
-                        <div class="tag-list">
-                            <span class="tag">Order Flow Trading</span>
-                            <span class="tag">NAS100</span>
-                            <span class="tag">Microstructure des marchés</span>
-                            <span class="tag">Carnet d'ordres</span>
-                            <span class="tag">Analyse quantitative</span>
-                            <span class="tag">Gestion des risques</span>
-                        </div>
-                    </div>
-
-                    <!-- Pôle 03 -->
-                    <div class="skill-card reveal-on-scroll">
-                        <span class="skill-index">Pôle 03</span>
                         <h3 class="skill-title">Finance d'Entreprise & Analyse</h3>
                         <p class="skill-desc">
                             Évaluation des flux de trésorerie, comptabilité analytique, étude de rentabilité et conduite de projets d'investissement.
@@ -144,6 +127,23 @@
                             <span class="tag">Comptabilité analytique</span>
                             <span class="tag">Projets d'investissement</span>
                             <span class="tag">Macroéconomie</span>
+                        </div>
+                    </div>
+
+                    <!-- Pôle 03 -->
+                    <div class="skill-card reveal-on-scroll">
+                        <span class="skill-index">Pôle 03</span>
+                        <h3 class="skill-title">Finance de Marché & Microstructure</h3>
+                        <p class="skill-desc">
+                            Étude de la liquidité institutionnelle, des profils de volume, des carnets d'ordres et gestion des risques de marché.
+                        </p>
+                        <div class="tag-list">
+                            <span class="tag">Microstructure des marchés</span>
+                            <span class="tag">Order Flow</span>
+                            <span class="tag">Carnet d'ordres</span>
+                            <span class="tag">Analyse quantitative</span>
+                            <span class="tag">Gestion des risques</span>
+                            <span class="tag">NAS100</span>
                         </div>
                     </div>
                 </div>
@@ -167,13 +167,13 @@
                         <div>
                             <div class="card-top">
                                 <span class="project-badge">Logiciel Desktop</span>
-                                <span class="mono text-muted" style="font-size: 0.8rem;">Oran, Algérie</span>
+                                <span class="mono text-muted" style="font-size: 0.78rem;">Oran, Algérie</span>
                             </div>
                             <h3 class="project-title">TissuPro - ERP & Caisse pour Commerce de Tissu</h3>
                             <p class="project-desc">
                                 Logiciel desktop conçu pour un grossiste textile. Il calcule le coût de revient réel en intégrant les pertes de coupe et frais de transport, gère le déstockage par lot (HIFO) et génère des étiquettes à QR codes dynamiques.
                             </p>
-                            <div class="tag-list mb-2">
+                            <div class="tag-list" style="margin-bottom: 0.5rem;">
                                 <span class="tag">Rust</span>
                                 <span class="tag">Tauri 2.0</span>
                                 <span class="tag">React</span>
@@ -190,7 +190,7 @@
                         <div>
                             <div class="card-top">
                                 <span class="project-badge live">Production Live</span>
-                                <span class="mono text-muted" style="font-size: 0.8rem;">Web</span>
+                                <span class="mono text-muted" style="font-size: 0.78rem;">Web</span>
                             </div>
                             <h3 class="project-title">h2mechaniccorp.com</h3>
                             <p class="project-desc">
@@ -213,7 +213,7 @@
                         <div>
                             <div class="card-top">
                                 <span class="project-badge dev">En développement</span>
-                                <span class="mono text-muted" style="font-size: 0.8rem;">Desktop ERP</span>
+                                <span class="mono text-muted" style="font-size: 0.78rem;">Desktop ERP</span>
                             </div>
                             <h3 class="project-title">Dress Rent (Atelier Prestige)</h3>
                             <p class="project-desc">
@@ -235,7 +235,7 @@
                         <div>
                             <div class="card-top">
                                 <span class="project-badge dev">En développement</span>
-                                <span class="mono text-muted" style="font-size: 0.8rem;">Desktop Data</span>
+                                <span class="mono text-muted" style="font-size: 0.78rem;">Desktop Data</span>
                             </div>
                             <h3 class="project-title">Biostat</h3>
                             <p class="project-desc">
@@ -257,7 +257,7 @@
                         <div>
                             <div class="card-top">
                                 <span class="project-badge">Maquettes Navigables</span>
-                                <span class="mono text-muted" style="font-size: 0.8rem;">UI/UX</span>
+                                <span class="mono text-muted" style="font-size: 0.78rem;">UI/UX</span>
                             </div>
                             <h3 class="project-title">Prototypes Sectoriels (VISIORA & Immobilier)</h3>
                             <p class="project-desc">
@@ -303,11 +303,11 @@
                     <!-- Step 2 -->
                     <div class="timeline-item">
                         <div class="timeline-marker"></div>
-                        <div class="timeline-date">2024 - Présent</div>
-                        <h3 class="timeline-heading">Trading Order Flow NAS100</h3>
-                        <p class="timeline-place">Analyse indépendante (1 an de pratique)</p>
+                        <div class="timeline-date">2024</div>
+                        <h3 class="timeline-heading">Conception & Développement Logiciel</h3>
+                        <p class="timeline-place">Projets TissuPro et H2 Mechanic Corp</p>
                         <p class="timeline-text">
-                            Étude quotidienne des volumes de transaction, des absorptions de liquidité et gestion stricte du risque sur l'indice américain.
+                            Conception de l'architecture technique, développement de systèmes de caisse et déploiement de plateformes web en production.
                         </p>
                     </div>
 
@@ -315,10 +315,10 @@
                     <div class="timeline-item">
                         <div class="timeline-marker"></div>
                         <div class="timeline-date">2024</div>
-                        <h3 class="timeline-heading">Conception & Développement Logiciel</h3>
-                        <p class="timeline-place">Projets TissuPro et H2 Mechanic Corp</p>
+                        <h3 class="timeline-heading">Analyse de Marché & Order Flow NAS100</h3>
+                        <p class="timeline-place">Pratique et étude des instruments dérivés</p>
                         <p class="timeline-text">
-                            Conception de l'architecture technique, développement de systèmes de caisse et déploiement de plateformes web en production.
+                            Étude quotidienne des volumes de transaction, de la liquidité institutionnelle et gestion stricte du risque.
                         </p>
                     </div>
 
@@ -364,16 +364,16 @@
                         <span class="gpa-number">16,59 / 20</span>
                     </div>
 
-                    <p class="section-desc" style="margin-top: 0; margin-bottom: 1.5rem;">
+                    <p class="section-desc" style="margin-top: 0; margin-bottom: 1.25rem;">
                         Formation universitaire complète couvrant les disciplines quantitatives, les mécanismes de marché et la finance d'entreprise.
                     </p>
 
                     <div class="tag-list">
-                        <span class="tag">Finance de Marché</span>
-                        <span class="tag">Trading Quantitatif</span>
                         <span class="tag">Finance d'Entreprise</span>
+                        <span class="tag">Analyse Financière</span>
                         <span class="tag">Comptabilité Analytique</span>
                         <span class="tag">Conduite de Projets d'Investissement</span>
+                        <span class="tag">Finance de Marché</span>
                         <span class="tag">Macroéconomie</span>
                         <span class="tag">Français (Courant)</span>
                         <span class="tag">Anglais (Opérationnel)</span>
@@ -431,7 +431,7 @@
 
             <div class="modal-part">
                 <div class="modal-part-label">Stack Technique</div>
-                <div class="tag-list" style="margin-top: 0.5rem;">
+                <div class="tag-list" style="margin-top: 0.4rem;">
                     <span class="tag">HTML/CSS</span>
                     <span class="tag">JavaScript Vanilla</span>
                     <span class="tag">Backend Gestion</span>
@@ -464,7 +464,7 @@
 
             <div class="modal-part">
                 <div class="modal-part-label">Stack Technique</div>
-                <div class="tag-list" style="margin-top: 0.5rem;">
+                <div class="tag-list" style="margin-top: 0.4rem;">
                     <span class="tag">Système ERP</span>
                     <span class="tag">Architecture modulaire</span>
                     <span class="tag">Gestion des cautions</span>
@@ -497,7 +497,7 @@
 
             <div class="modal-part">
                 <div class="modal-part-label">Stack Technique</div>
-                <div class="tag-list" style="margin-top: 0.5rem;">
+                <div class="tag-list" style="margin-top: 0.4rem;">
                     <span class="tag">Application Desktop</span>
                     <span class="tag">Algorithmique quantitative</span>
                     <span class="tag">Visualisation de données</span>
@@ -534,7 +534,7 @@
 
             <div class="modal-part">
                 <div class="modal-part-label">Stack Technique</div>
-                <div class="tag-list" style="margin-top: 0.5rem;">
+                <div class="tag-list" style="margin-top: 0.4rem;">
                     <span class="tag">Frontend Design</span>
                     <span class="tag">Navigation interactive</span>
                     <span class="tag">Calculs financiers</span>
